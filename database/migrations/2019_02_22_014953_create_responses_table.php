@@ -19,7 +19,7 @@ class CreateResponsesTable extends Migration
             $table->unsignedInteger('creator');
             $table->unsignedInteger('_dad');
             $table->foreign('creator')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('_dad')->references('id')->on('activities')onDelete('cascade');
+            $table->foreign('_dad')->references('id')->on('activities')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -17,8 +17,8 @@ class CreateActivitiesTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->string('description');
-            $table->usignedInteger('creator');
-            $table->usignedInteger('_dad');
+            $table->unsignedInteger('creator');
+            $table->unsignedInteger('_dad');
             $table->foreign('creator')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('_dad')->references('id')->on('teams')->onDelete('cascade');
             $table->timestamps();
