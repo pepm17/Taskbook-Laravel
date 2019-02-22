@@ -14,3 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::resource([
+    'team' => 'TeamController',
+    'activity' => 'ActivityController',
+    'response' => 'ResponseController'
+]);
