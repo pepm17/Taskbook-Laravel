@@ -9,4 +9,16 @@ class Activity extends Model
     protected $table = 'ativities';
 
     protected $fillable = ['title', 'description', 'creator', '_dad'];
+
+    public function user(){
+        return $this->belongsTo('App\User');
+    }
+
+    public function team(){
+        return $this->belongsTo('App\Team');
+    }
+
+    public function responses(){
+        return $this->hasMany('App\Response');
+    }
 }
