@@ -18,8 +18,8 @@ class CreateResponsesTable extends Migration
             $table->string('content');
             $table->unsignedInteger('creator');
             $table->unsignedInteger('_dad');
-            $table->foreign('creator')->references('id')->on('users');
-            $table->foreign('_dad')->references('id')->on('activities');
+            $table->foreign('creator')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('_dad')->references('id')->on('activities')onDelete('cascade');
             $table->timestamps();
         });
     }
