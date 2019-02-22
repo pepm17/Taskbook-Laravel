@@ -17,6 +17,10 @@ class CreateActivitiesTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->string('description');
+            $table->usignedInteger('creator');
+            $table->usignedInteger('_dad');
+            $table->foreign('creator')->references('id')->on('users');
+            $table->foreign('_dad')->references('id')->on('teams');
             $table->timestamps();
         });
     }

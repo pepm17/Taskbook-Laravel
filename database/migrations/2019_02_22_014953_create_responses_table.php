@@ -16,6 +16,10 @@ class CreateResponsesTable extends Migration
         Schema::create('responses', function (Blueprint $table) {
             $table->increments('id');
             $table->string('content');
+            $table->unsignedInteger('creator');
+            $table->unsignedInteger('_dad');
+            $table->foreign('creator')->references('id')->on('users');
+            $table->foreign('_dad')->references('id')->on('activities');
             $table->timestamps();
         });
     }
