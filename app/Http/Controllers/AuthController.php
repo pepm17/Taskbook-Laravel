@@ -12,7 +12,7 @@ class AuthController extends Controller{
         $request -> validate([
             'displayName' => 'required|string|unique:users',
             'email' => 'required|string|email|unique:users',
-            'password' => 'required|string|confirmed',
+            'password' => 'required|string|min:3|confirmed',
         ]);
 
         $user = new User([
@@ -26,7 +26,7 @@ class AuthController extends Controller{
         ->json(['message' => 'Succesfully created user!'], 201);
     }
 
-    public function  login (Request $request){
+    public function  signin (Request $request){
         $request->validate([
             'email' => 'required|string|email',
             'password' => 'required|string',
