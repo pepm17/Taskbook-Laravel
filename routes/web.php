@@ -15,8 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource([
+/*Route::resource([
     'team' => 'TeamController',
     'activity' => 'ActivityController',
     'response' => 'ResponseController'
-]);
+]);*/
