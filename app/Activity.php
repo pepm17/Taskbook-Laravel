@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Activity extends Model
 {
-    protected $table = 'ativities';
+    protected $table = 'activities';
 
     protected $fillable = ['title', 'description', 'creator', '_dad'];
 

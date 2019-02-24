@@ -57,5 +57,4 @@ class ActivityController extends BaseController{
             return $this->sendResponse($activity->toArray(), 'Activity deleted succesfully.');
         }return $this->sendError('User unauthorized');
     }
-    }
 }
