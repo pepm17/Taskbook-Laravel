@@ -64,4 +64,11 @@ class TeamController extends BaseController{
             return $this->sendResponse($team->toArray(), 'Team deleted succesfully.');
         }return $this->sendError('User unauthorized');
     }
+    
+    public function agregarUsuario(Request $request, $id){
+        $team = Team::find($id);
+        if(is_null($team)) return $this->sendError('Team not found');
+        $team->users()->attach($request->user_id);
+        return $this->sendResponse($team->toArray(), 'User agregate succesfully.');
+    }
 }

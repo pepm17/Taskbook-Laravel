@@ -17,6 +17,7 @@ Route::post('signup', 'AuthController@signup');
 Route::group(['middleware' => 'auth:api'], function(){
     Route::get('logout', 'AuthController@logout');
     Route::get('user', 'AuthController@user');
+    Route::put('team/{id}/user', 'API\TeamController@agregarUsuario');
     Route::apiResource('team', 'API\TeamController');
     Route::apiResource('activity', 'API\ActivityController');
     Route::apiResource('response', 'API\ResponseController');
