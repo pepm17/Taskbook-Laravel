@@ -20,5 +20,5 @@ Route::group(['middleware' => 'auth:api'], function(){
 });
 //Route::apiResources('team', 'API\TeamController');
 Route::middleware('auth:api')->group(function () {
-    Route:resource('team', 'API\TeamController');
+    Route::apiResource('team', 'API\TeamController');
 });
