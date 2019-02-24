@@ -19,7 +19,7 @@ class ActivityController extends BaseController{
         $activity->title = $request->title;
         $activity->description = $request->description;
         $activity->creator = $user_id;
-        $activity->_dad = $user_id;
+        $activity->_dad = $request->_dad;
         $activity->save();
         return $this->sendResponse($activity->toArray(), 'Activity created successfully.');
     }

@@ -19,4 +19,5 @@ Route::group(['middleware' => 'auth:api'], function(){
     Route::get('user', 'AuthController@user');
     Route::apiResource('team', 'API\TeamController');
     Route::apiResource('activity', 'API\ActivityController');
+    Route::apiResource('response', 'API\ResponseController');
 });
